@@ -1,0 +1,58 @@
+<h2>Doctor List <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-lines-fill" viewBox="0 0 16 16">
+    <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2z"/>
+  </svg></h2>
+
+<table class="table table-stripped">
+    <thead>
+        <tr>
+            <!--th>doctorId</th-->
+            <th>doctorName</th>
+            <th>speciality</th>
+            <th>hospitalName</th>
+            <th>location</th>
+            <th>email</th>
+            <th>mobileNo</th>
+            <th>password</th>
+            <th>chargedPerVisit</th>
+            <th>Update</th>
+            <th>Remove</th>
+            <th>view</th>
+
+
+
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let doctor of doctors">
+         <!--td>{{doctor.doctorId}}</td-->
+            <td>{{doctor.doctorName}}</td>
+            <td>{{doctor.speciality}}</td>
+            <td>{{doctor.hospitalName}}</td>
+            <td>{{doctor.location}}</td>
+            <td>{{doctor.email}}</td>
+            <td>{{doctor.mobileNo}}</td>
+            <td>{{doctor.password}}</td>
+            <td>{{doctor.chargedPerVisit}}</td>
+            <td>
+                <button (click)="updateDoctor(doctor.doctorId)" class=" btn btn-success " type="submit ">Update</button>
+            </td>
+            <td><button (click)="deleteDoctor(doctor.doctorId)" class="btn btn-danger " type="submit ">Delete</button>
+            </td>
+            
+            <td><button (click)="viewDoctorById(doctor.doctorId)" class="btn btn-primary " type="submit ">View</button>
+            </td>
+
+
+
+        </tr>
+
+
+    </tbody>
+
+
+</table>
+<footer class="footer">
+    <!--button   type="button" class="btn btn-info " routerLink="/doctor">Back</button-->
+    <button   type="button" class="btn btn-info " routerLink="/main-page">Return HomePage</button> 
+</footer>

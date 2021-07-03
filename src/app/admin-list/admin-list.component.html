@@ -1,0 +1,36 @@
+<!--<p>admin-list works!</p>-->
+<h2>Admin List</h2>
+<table class="table table striped">
+    <thead>
+        <tr>
+            <th> Id</th>
+            <th>AdminName </th>
+            <th>ContactNumber</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>PatientName</th>
+            <th>DoctorName</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let admin of admins">
+
+            <td>{{admin.id}}</td>
+            <td> {{admin.adminName}}</td>
+            <td> {{admin.contactNumber}} </td>
+            <td> {{admin.email}}</td>
+            <td> {{admin.password}}</td>
+            <td *ngFor = "let patients of admin.patients" >
+                {{patients.patientName}}
+            </td>
+            <td *ngFor = "let doctors of admin.doctors"> 
+                {{doctors.doctorName}}
+                
+            </td>
+        </tr>
+    </tbody>
+</table>
+    <footer class="footer">
+            <button   type="button" class="btn btn-info " routerLink="/admin">Back</button>
+            <button   type="button" class="btn btn-info " routerLink="/main-page">Return HomePage</button> 
+      </footer>
