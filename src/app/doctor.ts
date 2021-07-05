@@ -11,6 +11,6 @@ export class Doctor {
     mobileNo: string | undefined;
     password:string | undefined;
     chargedPerVisit:number | undefined;
-    appointments:Appointment[]=[];
-    feedbacks:Feedback[]=[];
+    //appointments:Appointment[]=[];
+    //feedbacks:Feedback[]=[];
 }

@@ -1,0 +1,28 @@
+<h2>Add availablity Of doctor <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-plus-fill" viewBox="0 0 16 16">
+    <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+    <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
+  </svg></h2>
+<form (ngSubmit)="onSubmit()">
+    
+
+    <div class="form-group">
+        <label>availabilityId</label>
+        <input type="text" class="form-control" id="availabilityId" [(ngModel)]="availabilitydates.availabilityId" name="availabilityId">
+    </div>
+
+    <div class="form-group">
+        <label>DoctorId</label>
+        <label *ngfor="let doctor of doctors"> {{doctor.doctorId}}</label>
+        <input type="text" class="form-control" id="doctorId"  name="fromdate">
+    </div>
+
+    <div class="form-group">
+        <label>FromDate</label>
+        <input type="text" class="form-control" id="FromDate" [(ngModel)]="availabilitydates.fromdate" name="fromdate">
+    </div>
+    <div class="form-group">
+        <label>EndDate</label>
+        <input type="text" class="form-control" id="EndDate" [(ngModel)]="availabilitydates.enddate" name="enddate">
+    </div>
+    <button class="btn btn-success" type="submit">Submit</button>
+</form>

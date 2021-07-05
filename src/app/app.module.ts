@@ -15,6 +15,7 @@ import { PatientComponent } from './patient/patient.component';
 import { AdminComponent } from './admin/admin.component';
 import { AdminListComponent } from './admin-list/admin-list.component';
 import { AddAdminComponent } from './add-admin/add-admin.component';
+import { AddAvailabilityComponent } from './add-availability/add-availability.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AddAdminComponent } from './add-admin/add-admin.component';
     PatientComponent,
     AdminComponent,
     AdminListComponent,
-    AddAdminComponent
+    AddAdminComponent,
+    AddAvailabilityComponent
   ],
   imports: [
     BrowserModule,
