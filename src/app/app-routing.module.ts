@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: 'getDoctorList', component: DoctorListComponent },
  
   { path: 'create-doctor', component: CreateDoctorComponent },
-  { path: 'add-availability', component: AddAvailabilityComponent },
+  { path: 'add-availability/:doctorId', component: AddAvailabilityComponent },
  // { path: '', redirectTo: 'doctor', pathMatch: 'full' },
   { path: 'main-page', component: MainPageComponent },
   { path: 'admin', component: AdminComponent },

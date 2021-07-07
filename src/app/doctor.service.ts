@@ -7,7 +7,7 @@ import { AvailabilityDates } from './availabilitydates';
   providedIn: 'root'
 })
 export class DoctorService {
-  private baseURL = 'http://localhost:8083/Doctors/';
+  private baseURL = 'http://localhost:8084/Doctors/';
  
   constructor(private httpClient: HttpClient) {}
  
@@ -20,8 +20,8 @@ export class DoctorService {
   getDoctorById(doctorId: number): Observable<Doctor> {
     return this.httpClient.get<Doctor>(`${this.baseURL}` + `/fetchDoctors/${doctorId}`);
   }
-  createDoctorAvailabillity(availabilitydates: AvailabilityDates): Observable<Object> {
-    return this.httpClient.post(`${this.baseURL}` + '/savethedates', availabilitydates);
+  createDoctorAvailabillity(availabilitydates:AvailabilityDates): Observable<Object> {
+    return this.httpClient.post(`${this.baseURL}` + '/addAvailabilityDates', availabilitydates);
   }
  
   updateDoctor(doctor: Doctor): Observable<Object> {

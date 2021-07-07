@@ -5,24 +5,25 @@
 <form (ngSubmit)="onSubmit()">
     
 
-    <div class="form-group">
+    <!-- <div class="form-group">
         <label>availabilityId</label>
         <input type="text" class="form-control" id="availabilityId" [(ngModel)]="availabilitydates.availabilityId" name="availabilityId">
-    </div>
+    </div> -->
 
     <div class="form-group">
         <label>DoctorId</label>
-        <label *ngfor="let doctor of doctors"> {{doctor.doctorId}}</label>
-        <input type="text" class="form-control" id="doctorId"  name="fromdate">
+        <!-- <label *ngfor="let doctor of doctors"> {{doctor.doctorId}}</label>  -->
+
+        <input type="number" class="form-control" id="doctorId" [(ngModel)]="doctor.doctorId"  name="doctorId">
     </div>
 
     <div class="form-group">
-        <label>FromDate</label>
-        <input type="text" class="form-control" id="FromDate" [(ngModel)]="availabilitydates.fromdate" name="fromdate">
+        <label>Fromdate</label>
+        <input type="datetime-local" class="form-control" id="FromDate" [(ngModel)]="availabilitydates.fromDate" name="fromDate">
     </div>
     <div class="form-group">
-        <label>EndDate</label>
-        <input type="text" class="form-control" id="EndDate" [(ngModel)]="availabilitydates.enddate" name="enddate">
+        <label>Enddate</label>
+        <input type="datetime-local" class="form-control" id="EndDate" [(ngModel)]="availabilitydates.endDate" name="endDate">
     </div>
     <button class="btn btn-success" type="submit">Submit</button>
 </form>

@@ -10,8 +10,8 @@ import { DoctorService } from '../doctor.service';
 })
 export class DoctorListComponent implements OnInit {
 
-  doctors: Doctor[] | undefined;
-  
+ doctors: Doctor[] | undefined;
+  //doctors:any;
   constructor(private doctorService: DoctorService, private router: Router) { }
 
   

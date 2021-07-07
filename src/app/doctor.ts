@@ -1,4 +1,5 @@
 import { Appointment } from "./appointment";
+import { AvailabilityDates } from "./availabilitydates";
 import { Feedback } from "./feedback";
 
 export class Doctor {
@@ -13,4 +14,5 @@ export class Doctor {
     chargedPerVisit:number | undefined;
     //appointments:Appointment[]=[];
     //feedbacks:Feedback[]=[];
+    //availabilitydates:AvailabilityDates[]=[];
 }

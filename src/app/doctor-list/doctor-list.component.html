@@ -14,10 +14,11 @@
             <th>mobileNo</th>
             <!-- <th>password</th> -->
             <th>chargedPerVisit</th>
+            
             <th>Update</th>
             <th>Remove</th>
             <th>view</th>
-
+            
 
 
 
@@ -34,6 +35,12 @@
             <td>{{doctor.mobileNo}}</td>
             <!-- <td>{{doctor.password}}</td> -->
             <td>{{doctor.chargedPerVisit}}</td>
+            <!-- <td *ngFor = "let availabilitydates of doctor.availabilitydates">
+                {{availabilitydates.fromdate}}
+            </td>
+            <td *ngFor = "let availabilitydates of doctor.availabilitydates">
+                {{availabilitydates.enddate}}
+            </td> -->
             <td>
                 <button (click)="updateDoctor(doctor.doctorId)" class=" btn btn-success " type="submit ">Update</button>
             </td>
@@ -43,7 +50,7 @@
             <td><button (click)="viewDoctorById(doctor.doctorId)" class="btn btn-primary " type="submit ">View</button>
             </td>
 
-
+            <button type="button" class="btn btn-outline-info btn-sm"  routerLink = "/add-availability/{{doctor.doctorId}}">add Availability</button>
 
         </tr>
 

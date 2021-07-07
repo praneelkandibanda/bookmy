@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AvailabilityDates } from '../availabilitydates';
 import { Doctor } from '../doctor';
 import { DoctorService } from '../doctor.service';
@@ -10,13 +10,18 @@ import { DoctorService } from '../doctor.service';
   styleUrls: ['./add-availability.component.css']
 })
 export class AddAvailabilityComponent implements OnInit {
-
-  //doctor: Doctor= new Doctor();
-  doctors:any;
+   doctorId:number=0;
+  doctor: Doctor= new Doctor();
+  //doctors:any;
   availabilitydates:AvailabilityDates=new AvailabilityDates()
-  constructor(private doctorService: DoctorService, private router: Router) { }
+  constructor(private doctorService: DoctorService, private router: Router,private route:ActivatedRoute) { }
  
   ngOnInit(): void {
+    this.doctorId = this.route.snapshot.params['doctorId'];
+       this.doctorService.getDoctorById(this.doctorId).subscribe(data => {
+         this.doctor = data; console.log(data);
+       },
+       error => console.log(error));
   }
  
   onSubmit() {
@@ -24,7 +29,8 @@ export class AddAvailabilityComponent implements OnInit {
   }
  
   saveDoctorAvailability(){
-    this.doctorService.createDoctorAvailabillity(this. availabilitydates).subscribe( data => {console.log(data);}, error => console.log(error));
+    this.availabilitydates.doctor=this.doctor;
+    this.doctorService.createDoctorAvailabillity(this.availabilitydates).subscribe( data => {console.log(data);}, error => console.log(error));
     this.navigateToDoctors();
   }
  
